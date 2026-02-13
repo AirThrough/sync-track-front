@@ -7,6 +7,8 @@ import {
   CardTitle,
 } from "~shared/ui";
 import { useLoginForm } from "~pages/Auth/model/hooks";
+import { FieldSet } from "~/shared/ui/field";
+import { FormField } from "~/shared/components";
 
 export const LoginForm = () => {
   const { register, handleSubmit, errors, onSubmit } = useLoginForm();
@@ -18,16 +20,18 @@ export const LoginForm = () => {
           <CardTitle>Login</CardTitle>
         </CardHeader>
         <CardContent>
-          <div>
-            email:
-            <input type="email" {...register("email")} />
-            {errors.email && <p>{errors.email.message}</p>}
-          </div>
-          <div>
-            password:
-            <input type="password" {...register("password")} />
-            {errors.password && <p>{errors.password.message}</p>}
-          </div>
+          <FieldSet>
+            <FormField
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              inputProps={{
+                ...register("email"),
+              }}
+              error={errors.email?.message}
+            />
+          </FieldSet>
         </CardContent>
         <CardFooter>
           <Button
