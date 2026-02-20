@@ -6,6 +6,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { authApiService } from "~/shared/api/auth.service";
+import { toast } from "sonner";
 
 export const useLoginForm = () => {
   const {
@@ -23,6 +24,10 @@ export const useLoginForm = () => {
     },
     onSuccess: (response) => {
       localStorage.setItem("accessToken", response.accessToken);
+      toast.success("Login successful");
+    },
+    onError: (error) => {
+      toast.error(error.message);
     },
   });
 
