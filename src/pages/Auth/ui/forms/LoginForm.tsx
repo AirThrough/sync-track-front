@@ -9,13 +9,18 @@ import {
 import { useLoginForm } from "~pages/Auth/model/hooks";
 import { FieldSet } from "~/shared/ui/field";
 import { FormField } from "~/shared/components";
+import { UISpinner } from "~/shared/ui";
 
 export const LoginForm = () => {
-  const { register, handleSubmit, errors, onSubmit } = useLoginForm();
+  const { register, handleSubmit, errors, onSubmit, isPending } =
+    useLoginForm();
 
   return (
     <div className="flex items-center justify-center h-screen w-screen">
-      <Card className="w-[400px]">
+      <Card className="w-[400px] relative">
+        {!isPending && (
+          <UISpinner className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        )}
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
             Who's tracking?
@@ -27,7 +32,7 @@ export const LoginForm = () => {
               label="Email"
               name="email"
               type="email"
-              placeholder="your.favorite@email.com"
+              placeholder="your@email.com"
               inputProps={{
                 ...register("email"),
               }}
