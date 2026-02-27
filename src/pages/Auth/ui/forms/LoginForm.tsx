@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   AccentButton,
   Card,
@@ -12,37 +13,38 @@ import { FormField } from "~/shared/components";
 import { UISpinner } from "~/shared/ui";
 
 export const LoginForm = () => {
+  const { t } = useTranslation();
   const { register, handleSubmit, errors, onSubmit, isPending } =
     useLoginForm();
 
   return (
     <div className="flex items-center justify-center h-screen w-screen">
       <Card className="w-[400px] relative">
-        {!isPending && (
+        {isPending && (
           <UISpinner className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         )}
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
-            Who's tracking?
+            {t("auth.login.title")}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <FieldSet>
             <FormField
-              label="Email"
+              label={t("auth.login.email")}
               name="email"
               type="email"
-              placeholder="your@email.com"
+              placeholder={t("auth.login.emailPlaceholder")}
               inputProps={{
                 ...register("email"),
               }}
               error={errors.email?.message}
             />
             <FormField
-              label="Password"
+              label={t("auth.login.password")}
               name="password"
               type="password"
-              placeholder="secretpassword123"
+              placeholder={t("auth.login.passwordPlaceholder")}
               inputProps={{
                 ...register("password"),
               }}
@@ -56,7 +58,7 @@ export const LoginForm = () => {
             type="submit"
             onClick={handleSubmit(onSubmit)}
           >
-            Sign In
+            {t("auth.login.submit")}
           </AccentButton>
         </CardFooter>
       </Card>
