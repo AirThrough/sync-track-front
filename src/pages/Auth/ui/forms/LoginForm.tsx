@@ -11,6 +11,7 @@ import { useLoginForm } from "~pages/Auth/model/hooks";
 import { FieldSet } from "~/shared/ui/field";
 import { FormField } from "~/shared/components";
 import { UISpinner } from "~/shared/ui";
+import { SHARED_KEYS } from "~/shared/i18n";
 
 export const LoginForm = () => {
   const { t } = useTranslation();
@@ -25,26 +26,26 @@ export const LoginForm = () => {
         )}
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
-            {t("auth.login.title")}
+            {t(SHARED_KEYS.TITLES.WHO_IS_TRACKING)}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <FieldSet>
             <FormField
-              label={t("auth.login.email")}
+              label={t(SHARED_KEYS.FIELDS.EMAIL)}
               name="email"
               type="email"
-              placeholder={t("auth.login.emailPlaceholder")}
+              placeholder={t(SHARED_KEYS.PLACEHOLDERS.EMAIL)}
               inputProps={{
                 ...register("email"),
               }}
               error={errors.email?.message}
             />
             <FormField
-              label={t("auth.login.password")}
+              label={t(SHARED_KEYS.FIELDS.PASSWORD)}
               name="password"
               type="password"
-              placeholder={t("auth.login.passwordPlaceholder")}
+              placeholder={t(SHARED_KEYS.PLACEHOLDERS.PASSWORD)}
               inputProps={{
                 ...register("password"),
               }}
@@ -58,7 +59,7 @@ export const LoginForm = () => {
             type="submit"
             onClick={handleSubmit(onSubmit)}
           >
-            {t("auth.login.submit")}
+            {t(SHARED_KEYS.ACTIONS.SIGN_IN)}
           </AccentButton>
         </CardFooter>
       </Card>

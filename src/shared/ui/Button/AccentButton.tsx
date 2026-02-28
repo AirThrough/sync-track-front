@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { cn } from "~/shared/utils/cn.utils";
+import { cn } from "~/shared/utils/helpers/cn.utils";
 
 export const AccentButton = ({
   className,
