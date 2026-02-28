@@ -13,9 +13,9 @@ export default {
     sign_in: "Войти",
   },
   titles: {
-    who_is_tracking: "Кто отслеживает?",
+    who_is_tracking: "Кто будет трекать?",
   },
   notifications: {
-    login_success: "Вход выполнен",
+    login_success: "Вход выполнен успешно",
   },
 } as const;

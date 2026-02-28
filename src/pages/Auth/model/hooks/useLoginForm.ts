@@ -9,7 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import { authApiService } from "~/shared/api/auth.service";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "~/app/model/store/auth/auth.store";
+import { useAuthStore } from "~/entities/user/store/auth/auth.store";
 
 export const useLoginForm = () => {
   const { t } = useTranslation();
