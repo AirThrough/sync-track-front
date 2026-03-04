@@ -5,3 +5,4 @@ export * from "./spinner";
 export * from "./input";
 export * from "./label";
 export * from "./field";
+export * from "./select";

@@ -11,6 +11,9 @@ importers:
       '@base-ui/react':
         specifier: ^1.6.0
         version: 1.6.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@fontsource-variable/edu-nsw-act-cursive':
+        specifier: ^5.2.2
+        version: 5.2.2
       '@fontsource-variable/geist':
         specifier: ^5.2.9
         version: 5.2.9
@@ -307,6 +310,9 @@ packages:
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
+
+  '@fontsource-variable/edu-nsw-act-cursive@5.2.2':
+    resolution: {integrity: sha512-HE0RTFynmCDY+el1+Cbj6kv+PmbcCHxxo3+MNNCLnZLLOkvdVxxb69kK57sTN11PgmchW7QbpVnoQVfkIMTNFQ==}
 
   '@fontsource-variable/geist@5.2.9':
     resolution: {integrity: sha512-TP+QSBG3wxKGPE33CbMy/L0Nu3qvJ6Fy81Yc4LnQ95xH+i+cfEp8fyU8/kfV14YwszxIFPhnoMTbjL71waVpyQ==}
@@ -2466,6 +2472,8 @@ snapshots:
       react-dom: 19.2.7(react@19.2.7)
 
   '@floating-ui/utils@0.2.11': {}
+
+  '@fontsource-variable/edu-nsw-act-cursive@5.2.2': {}
 
   '@fontsource-variable/geist@5.2.9': {}
 

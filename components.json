@@ -14,9 +14,9 @@
   "rtl": false,
   "aliases": {
     "components": "src/shared/components",
-    "utils": "src/shared/lib/utils",
+    "utils": "src/shared/utils",
     "ui": "src/shared/ui",
-    "lib": "src/shared/lib",
+    "lib": "src/shared/utils",
     "hooks": "src/shared/hooks"
   },
   "menuColor": "default",

@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useIsAuthenticated } from "~/entities/user";
+import { Header } from "./Header";
 
 export const Layout = () => {
   const isAuthenticated = useIsAuthenticated();
@@ -9,7 +10,7 @@ export const Layout = () => {
         <Outlet />
       ) : (
         <div>
-          public
+          <Header />
           <Outlet />
         </div>
       )}
