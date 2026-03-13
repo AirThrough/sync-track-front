@@ -49,9 +49,15 @@ const createWeatherApiService = (
   $api: AxiosInstance,
   endpoints: WeatherEndpoints,
 ) => {
+  const abortControllers: Record<string, AbortController> = {};
   return {
     getWeather: async (): Promise<AxiosResponse<unknown>> => {
-      return await $api.get(endpoints.getWeather, { params: weatherQuery });
+      abortControllers[endpoints.getWeather]?.abort();
+      abortControllers[endpoints.getWeather] = new AbortController();
+      return await $api.get(endpoints.getWeather, {
+        params: weatherQuery,
+        signal: abortControllers[endpoints.getWeather].signal,
+      });
     },
   };
 };

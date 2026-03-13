@@ -1,4 +1,5 @@
 import { LanguagePicker } from "~/shared/components";
+import { WeatherIndicator } from "~/features/WeatherInfo";
 
 export const Header = () => {
   return (
